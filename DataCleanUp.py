@@ -38,6 +38,11 @@ class DataCleanUp:
     
   def AddDualDataToColumn(ColumnName, Delimiter):
     df[ColumnName + "_Second"] = df[ColumnName].str.split(Delimiter).str[1]
+    
+  def EliminateBadData(ColumnName, CharNo):
+    for i in range(497):
+      if(len(df.at[i,ColumnName]) != CharNo):
+        df.at[i,ColumnName] = ""
 
 FixCells('Phone_Number','09', '9')
 FixCells('Phone_Number', '011', '11')
