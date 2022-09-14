@@ -33,6 +33,11 @@ class DataCleanUp:
 
   def CleanDualData(ColumnName, Delimiter):
     df[ColumnName] = df[ColumnName].str.split(Delimiter).str[0]
+  
+  #Add Data After delimiter to a second column
+    
+  def AddDualDataToColumn(ColumnName, Delimiter):
+    df[ColumnName + "_Second"] = df[ColumnName].str.split(Delimiter).str[1]
 
 FixCells('Phone_Number','09', '9')
 FixCells('Phone_Number', '011', '11')
