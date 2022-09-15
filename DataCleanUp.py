@@ -45,7 +45,7 @@ class DataCleanUp:
         df.at[i,ColumnName] = ""
         
   def EliminateStringFromInt(ColumnName):
-    df['Establishment_year'] = df['Establishment_year'].astype('str').str.extractall('(\d+)').unstack().fillna('').sum(axis=1).astype(int)
+    df['columnName'] = df['columnName'].astype('str').str.extractall('(\d+)').unstack().fillna('').sum(axis=1).astype(int)
 
 
 FixCells('Phone_Number','09', '9')
